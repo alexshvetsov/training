@@ -1,11 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./App.scss";
+import MainContent from "./components/main-content/main-content.tsx";
+import Navbar from "./components/navbar/navbar.tsx";
 
-function App() {
+const App = () => {
   return (
-<>asd</>
+    <Router>
+      <div className="app">
+        <div data-testid="navbar">
+          <Navbar />
+        </div>
+        <MainContent />
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
