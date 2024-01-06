@@ -6,7 +6,6 @@ import Home from "../../components/home/home.tsx";
 const MainContent = () => {
   return (
     <main>
-      asdad
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
