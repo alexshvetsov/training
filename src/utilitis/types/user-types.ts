@@ -2,11 +2,8 @@ export interface User {
   id: string;
   username: string;
   email: string;
-  gameNickName: string;
-  bankroll: number;
+  password:string;
   creationDate: Date;
-  lastPayed: Date;
-  lastPlayed: Date;
   role: Role;
 }
 

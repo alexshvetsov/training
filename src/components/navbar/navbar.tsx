@@ -18,6 +18,7 @@ interface Page {
 let pages: Page[] = [
   { route: "", name: "Home" },
   { route: "login", name: "Login" },
+  { route: "players", name: "Players" },
 ];
 
 const Navbar = () => {
