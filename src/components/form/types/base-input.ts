@@ -4,7 +4,7 @@ import GridItem from "../../../utilitis/types/grid-item";
 
 export interface BaseInput {
   name: string;
-  type: "text" | "select" | "custom";
+  type: "text" | "select" | "custom" | "autocomplete";
   placeholder?:string;
   label?: string;
   customInput?: React.ReactNode;

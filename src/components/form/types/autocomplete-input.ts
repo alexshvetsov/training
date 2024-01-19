@@ -2,6 +2,7 @@ import React from 'react';
 import { BaseInput } from './base-input';
 import { Option } from './option';
 
-export interface SelectInputInterface extends BaseInput {
+export interface AutocompleteInputInterface extends BaseInput {
   options: Option[];
+  onInputChange:(value:string, values:Option[])=> Option[]
 }

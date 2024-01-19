@@ -4,6 +4,7 @@ import FormInterface from "./types/form";
 import TextInput from "./components/text-input.tsx";
 import SelectInput from "./components/select-input.tsx";
 import { Button } from "@mui/material";
+import AutocompleteInput from "./components/autocomplete-input.tsx";
 
 interface FormProps {
   form: FormInterface;
@@ -11,6 +12,7 @@ interface FormProps {
 }
 
 const Form = ({ form, onInputInteraction }: FormProps) => {
+  // change this formInterface to inputs to be key string :input object instead of an array
   const methods = useForm();
   const { handleSubmit, watch } = methods;
 
@@ -29,6 +31,8 @@ const Form = ({ form, onInputInteraction }: FormProps) => {
         return <TextInput input={input} key={input.name} />;
       case "select":
         return <SelectInput input={input} key={input.name} />;
+      case "autocomplete":
+        return <AutocompleteInput input={input} key={input.name} />;
       case "custom":
         const CustomComponent = input.component;
         return (
@@ -50,7 +54,7 @@ const Form = ({ form, onInputInteraction }: FormProps) => {
         className={form.className}
         style={{ ...form.flexBox } || { ...form.gridBox }}
       >
-        {form.inputs.map(renderInput)}
+        {form.inputs?.map(renderInput)}
         <Button
           type="submit"
           color="primary"
